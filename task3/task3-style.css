@@ -1,0 +1,101 @@
+/* 支持 Firefox, Chrome, Safari, Opera, IE8+ 和老的Android浏览器 */
+*{
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box; 
+	margin:0;
+	padding:0;
+}
+body{
+	font: 100%/165% 微软雅黑;
+}
+p{
+	margin-bottom: 1em;
+}
+
+
+main{
+	background-color: #ccc;
+}
+#teamLogo,#teamIntro,#perLogo{
+	background-color: white;
+}
+body,main,#teamLogo,#teamIntro,#perLogo{
+	padding:20px;
+}
+main,#teamLogo,#teamIntro,#perLogo,img{
+	border:1px solid #999;
+}
+img{
+	width:80px;
+	height:80px;
+	float:left;  /*解决图片底部留白问题*/
+}
+#perLogo img:not(:last-child){
+	margin-bottom: 20px;
+}
+span{
+	font-size: .8em;
+	vertical-align: top;
+	margin-left: 20px;
+}
+#teamLogo{
+	width:200px;
+}
+#perLogo{
+	width:120px;
+}
+#teamIntro{
+	margin-left: 220px;
+	margin-right: 140px;
+}
+
+
+/*浮动布局,要改变浮动元素在html中的位置*/
+main{
+	overflow: auto;  /*清除浮动，保证高度始终是子元素中的最高高度*/
+	/*zoom:1; 为了支持IE6*/
+}
+#teamLogo{
+	float:left;
+}
+#perLogo{
+	float:right;
+}
+
+
+/*flex布局,在没有设置高度时，三栏的高度都和其中最高的那个一样
+main{
+	-webkit-display:flex;
+	        display:flex;
+}
+#teamLogo,#perLogo{
+	-webkit-flex:none;
+	        flex:none;
+}
+#teamIntro{
+	-webkit-flex:1;
+	        flex:1;
+}
+#teamIntro{
+	margin-left: 20px;
+	margin-right: 20px;
+}*/
+
+
+/*绝对定位布局，父元素的高度不能自适应子元素的最高高度
+main{
+	position: relative;
+}
+#teamLogo{
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+#perLogo{
+	position:absolute;
+	top:20px;
+	right:20px;
+}
+*/
+
