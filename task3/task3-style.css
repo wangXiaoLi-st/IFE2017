@@ -8,44 +8,48 @@
 }
 body{
 	font: 100%/165% 微软雅黑;
+	min-width: 600px;
 }
 p{
-	margin-bottom: 1em;
+	margin-bottom: .8em;
+	font-size: .8em;
 }
 
 
 main{
 	background-color: #eee;
 }
-#teamLogo,#teamIntro,#perLogo{
+.left, .middle, .right{
 	background-color: white;
 }
-body,main,#teamLogo,#teamIntro,#perLogo{
+body, main, .left, .middle{
 	padding:20px;
 }
-main,#teamLogo,#teamIntro,#perLogo,img{
+main, .left, .middle, .right, img{
 	border:1px solid #999;
 }
-img{
-	width:80px;
-	height:80px;
-	float:left;  /*解决图片底部留白问题*/
+img.teamLogo{
+	float:left;
 }
-#perLogo img:not(:last-child){
-	margin-bottom: 20px;
-}
-span{
+span{	
+	margin-left: 20px;
 	font-size: .8em;
 	vertical-align: top;
-	margin-left: 20px;
 }
-#teamLogo{
+img.perLogo{
+	display: block;  /*解决图片底部留白问题*/
+	width:80px;
+	height:80px;
+	margin:20px;
+}
+
+.left{
 	width:200px;
 }
-#perLogo{
+.right{
 	width:120px;
 }
-#teamIntro{
+.middle{
 	margin-left: 220px;
 	margin-right: 140px;
 }
@@ -54,12 +58,12 @@ span{
 /*浮动布局,要改变浮动元素在html中的位置*/
 main{
 	overflow: auto;  /*清除浮动，保证高度始终是子元素中的最高高度*/
-	/*zoom:1; 为了支持IE6*/
+	zoom:1;          /*为了支持IE6*/
 }
-#teamLogo{
+.left{
 	float:left;
 }
-#perLogo{
+.right{
 	float:right;
 }
 
@@ -69,15 +73,15 @@ main{
 	-webkit-display:flex;
 	        display:flex;
 }
-#teamLogo,#perLogo{
+.left,.right{
 	-webkit-flex:none;
 	        flex:none;
 }
-#teamIntro{
+.middle{
 	-webkit-flex:1;
 	        flex:1;
 }
-#teamIntro{
+.middle{
 	margin-left: 20px;
 	margin-right: 20px;
 }*/
@@ -87,12 +91,12 @@ main{
 main{
 	position: relative;
 }
-#teamLogo{
+.left{
 	position:absolute;
 	top:20px;
 	left:20px;
 }
-#perLogo{
+.right{
 	position:absolute;
 	top:20px;
 	right:20px;
